@@ -1,0 +1,25 @@
+{
+  "name": "inatel-cypress-project",
+  "version": "1.0.0",
+  "description": "Projeto de automação de testes do site do Inatel com Cypress",
+  "author": "Fabio Augusto Gandra Cruvine, Karolina Oliveira da Silva, Yam Sol Britto Bertamini",
+  "license": "MIT",
+  "scripts": {
+    "cypress:abrir": "cypress open",
+    "test": "cypress run",
+    "test:sem-bdd": "cypress run --spec \"cypress/sem-bdd/**/*.spec.js\"",
+    "test:bdd": "cypress run --config-file cypress.bdd.config.js",
+    "abrir:sem-bdd": "cypress open --config-file cypress.config.js",
+    "abrir:bdd": "cypress open --config-file cypress.bdd.config.js"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^13.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.0.0",
+    "cypress": "^13.0.0",
+    "esbuild": "^0.20.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/bdd/step_definitions/**/*.steps.js"
+  }
+}
