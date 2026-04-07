@@ -34,7 +34,7 @@ npm -v
 1. Clone o repositorio:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/Karolina-Oliveira/S07-Cypress_Project.git
 ```
 
 2. Acesse a pasta do projeto:
