@@ -14,6 +14,7 @@ O projeto esta configurado para executar os testes contra a URL base `https://in
 - Cypress
 - Cucumber Preprocessor para Cypress
 - Esbuild Preprocessor
+- Mochawesome Reporter
 
 ## Pre-requisitos
 
@@ -121,6 +122,36 @@ Executa apenas os testes `bdd`:
 npm run test:bdd
 ```
 
+## Relatorio de execucao
+
+O projeto esta configurado para gerar relatorio HTML automaticamente apos a execucao dos testes.
+
+Para gerar o relatorio:
+
+```bash
+npm test
+```
+
+Ou, para testes BDD:
+
+```bash
+npm run test:bdd
+```
+
+O arquivo HTML e gerado em:
+
+```text
+cypress/reports/index.html
+```
+
+Para abrir o relatorio no Windows pelo terminal:
+
+```powershell
+start cypress\reports\index.html
+```
+
+Se preferir, voce tambem pode abrir o arquivo manualmente pelo explorador de arquivos.
+
 ## Tipos de teste no projeto
 
 ### Sem BDD
@@ -159,6 +190,7 @@ As dependencias de desenvolvimento configuradas no projeto sao:
 - `cypress`
 - `@badeball/cypress-cucumber-preprocessor`
 - `@bahmutov/cypress-esbuild-preprocessor`
+- `cypress-mochawesome-reporter`
 - `esbuild`
 
 ## Observacoes

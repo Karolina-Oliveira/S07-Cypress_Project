@@ -9,6 +9,14 @@ const {
 
 module.exports = defineConfig({
   allowCypressEnv: true,
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    reportDir: 'cypress/reports',
+    charts: true,
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false
+  },
 
   e2e: {
     baseUrl: 'https://inatel.br',
@@ -17,6 +25,8 @@ module.exports = defineConfig({
     fixturesFolder: 'cypress/fixtures',
 
     async setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on)
+
       await addCucumberPreprocessorPlugin(on, config)
 
       on(
