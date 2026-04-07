@@ -40,8 +40,10 @@ git clone https://github.com/Karolina-Oliveira/S07-Cypress_Project.git
 2. Acesse a pasta do projeto:
 
 ```bash
-cd inatel_cypress_project
+cd S07-Cypress_Project
 ```
+
+Se voce clonar usando outro nome de pasta, use esse nome no comando `cd`.
 
 3. Instale as dependencias:
 
