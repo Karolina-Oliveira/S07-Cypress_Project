@@ -181,7 +181,7 @@ As implementacoes dos passos ficam em:
 cypress/bdd/step_definitions/
 ```
 
-Esse formato utiliza Gherkin com palavras-chave como `Dado`, `Quando` e `Entao`.
+Esse formato utiliza Gherkin com arquivos `.feature` e implementacao dos passos em `step_definitions`.
 
 ## Dependencias principais
 

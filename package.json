@@ -8,9 +8,9 @@
     "cypress:abrir": "cypress open",
     "test": "cypress run",
     "test:sem-bdd": "cypress run --spec \"cypress/sem-bdd/**/*.spec.js\"",
-    "test:bdd": "cypress run --config-file cypress.bdd.config.js",
-    "abrir:sem-bdd": "cypress open --config-file cypress.config.js",
-    "abrir:bdd": "cypress open --config-file cypress.bdd.config.js"
+    "test:bdd": "node scripts/run-cypress-bdd.js run",
+    "abrir:sem-bdd": "cypress open",
+    "abrir:bdd": "node scripts/run-cypress-bdd.js open"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^24.0.1",

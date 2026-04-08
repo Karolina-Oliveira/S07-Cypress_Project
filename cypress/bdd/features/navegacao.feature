@@ -1,5 +1,5 @@
-Funcionalidade: Navegação básica no site do Inatel
+Feature: Navegacao basica no site do Inatel
 
-  Cenário: Acessar a home do site
-    Dado que o usuário acessa a home do Inatel
-    Então a página inicial deve ser exibida com sucesso
+  Scenario: Acessar a home do site
+    Given que o usuario acessa a home do Inatel
+    Then a pagina inicial deve ser exibida com sucesso
