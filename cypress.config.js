@@ -15,14 +15,6 @@ const permitirCypressEnv = process.env.CYPRESS_bdd === 'true'
 
 module.exports = defineConfig({
   allowCypressEnv: permitirCypressEnv,
-  reporter: 'cypress-mochawesome-reporter',
-  reporterOptions: {
-    reportDir: 'cypress/reports',
-    charts: true,
-    embeddedScreenshots: true,
-    inlineAssets: true,
-    saveAllAttempts: false
-  },
 
   e2e: {
     baseUrl: 'https://inatel.br',
@@ -41,7 +33,11 @@ module.exports = defineConfig({
       openMode: 0
     },
     async setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on)
+      try {
+        require('cypress-mochawesome-reporter/plugin')(on)
+      } catch (e) {
+        console.log('Reporter mochawesome não disponível, continuando sem ele')
+      }
 
       const executarBdd = emModoBdd(config)
 
