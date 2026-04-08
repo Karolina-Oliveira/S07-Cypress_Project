@@ -7,7 +7,7 @@ describe('Navegação - Site do Inatel', () => {
     cy.contains('Inatel').should('be.visible')
   })
 
-  it('TC-010 - deve acessar a pagina de noticias e validar conteudo carregado', () => {
+  it('TC-002 - deve acessar a pagina de noticias e validar conteudo carregado', () => {
     cy.viewport(1440, 900)
     noticiasPage.acessarNoticias()
     noticiasPage.fecharCookiesSeAparecer()

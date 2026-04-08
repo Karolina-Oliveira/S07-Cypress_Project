@@ -4,7 +4,7 @@ Feature: Navegacao basica no site do Inatel
     Given que o usuario acessa a home do Inatel
     Then a pagina inicial deve ser exibida com sucesso
 
-  Scenario: TC-010 - Acessar a pagina de noticias e validar conteudo carregado
+  Scenario: TC-002 - Acessar a pagina de noticias e validar conteudo carregado
     Given que o usuario acessa a pagina de noticias em viewport desktop
     Then a pagina de noticias deve exibir links e conteudo visiveis
 

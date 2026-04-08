@@ -16,7 +16,7 @@ describe('Acessibilidade - Site do Inatel', () => {
     acessibilidadePage.fecharCookiesSeAparecer()
   })
 
-  it('TC-002 - deve abrir o gerenciador de acessibilidade com os controles principais', () => {
+  it('TC-003 - deve abrir o gerenciador de acessibilidade com os controles principais', () => {
     acessibilidadePage.abrirPainelAcessibilidade()
 
     validarVisibilidadeDoZoom()
@@ -29,14 +29,14 @@ describe('Acessibilidade - Site do Inatel', () => {
     acessibilidadePage.validarSemQuebraVisual()
   })
 
-  it('TC-003 - deve aplicar contraste escuro no html', () => {
+  it('TC-004 - deve aplicar contraste escuro no html', () => {
     acessibilidadePage.clicarOpcaoPorSeletor(acessibilidadePage.seletores.opcaoContrasteEscuro)
 
     acessibilidadePage.validarClasseNoHtml('dxaccess')
     acessibilidadePage.validarSemQuebraVisual()
   })
 
-  it('TC-004 - deve aplicar contraste claro e contraste cinza de forma independente', () => {
+  it('TC-005 - deve aplicar contraste claro e contraste cinza de forma independente', () => {
     acessibilidadePage.clicarOpcaoPorSeletor(acessibilidadePage.seletores.opcaoContrasteClaro)
     acessibilidadePage.validarClasseNoHtml('dxaccess-light')
     acessibilidadePage.validarClasseAusenteNoHtml('dxaccess-gray')
@@ -49,7 +49,7 @@ describe('Acessibilidade - Site do Inatel', () => {
     acessibilidadePage.validarSemQuebraVisual()
   })
 
-  it('TC-005 - deve aumentar o tamanho base da fonte', () => {
+  it('TC-006 - deve aumentar o tamanho base da fonte', () => {
     acessibilidadePage.capturarFontSizeRaizInline('fontAntes')
     acessibilidadePage.capturarNivelFonte('nivelAntes')
 
@@ -72,7 +72,7 @@ describe('Acessibilidade - Site do Inatel', () => {
     acessibilidadePage.validarSemQuebraVisual()
   })
 
-  it('TC-006 - deve reduzir o tamanho base da fonte apos um aumento', () => {
+  it('TC-007 - deve reduzir o tamanho base da fonte apos um aumento', () => {
     acessibilidadePage.clicarOpcaoPorSeletor(acessibilidadePage.seletores.opcaoAumentarFonte)
     acessibilidadePage.capturarFontSizeRaizInline('fontAumentada')
     acessibilidadePage.capturarNivelFonte('nivelAumentado')
@@ -97,7 +97,7 @@ describe('Acessibilidade - Site do Inatel', () => {
     acessibilidadePage.validarSemQuebraVisual()
   })
 
-  it('TC-007 - deve combinar aumento de fonte com contraste escuro', () => {
+  it('TC-008 - deve combinar aumento de fonte com contraste escuro', () => {
     acessibilidadePage.capturarFontSizeRaizInline('fontAntes')
     acessibilidadePage.capturarNivelFonte('nivelAntes')
 
@@ -123,7 +123,7 @@ describe('Acessibilidade - Site do Inatel', () => {
     acessibilidadePage.validarSemQuebraVisual()
   })
 
-  it('TC-008 - deve ativar zoom ao passar o mouse e exibir tooltip', () => {
+  it('TC-009 - deve ativar zoom ao passar o mouse e exibir tooltip', () => {
     cy.get('body').then(($body) => {
       const zoomDisponivel = $body[0].offsetWidth >= 1280
 
@@ -139,7 +139,7 @@ describe('Acessibilidade - Site do Inatel', () => {
     acessibilidadePage.validarSemQuebraVisual()
   })
 
-  it('TC-009 - deve abrir o gerenciador de cookies a partir do modal de acessibilidade', () => {
+  it('TC-010 - deve abrir o gerenciador de cookies a partir do modal de acessibilidade', () => {
     acessibilidadePage.abrirGerenciadorCookiesPeloModal()
     acessibilidadePage.validarPainelCookiesAberto()
   })
