@@ -18,7 +18,13 @@ module.exports = defineConfig({
 
   e2e: {
     baseUrl: 'https://inatel.br',
-    specPattern: 'cypress/sem-bdd/**/*.spec.js',
+    specPattern: [
+      'cypress/sem-bdd/specs/navegacao.spec.js',
+      'cypress/sem-bdd/specs/acessibilidade.spec.js',
+      'cypress/sem-bdd/specs/noticias.spec.js',
+      'cypress/sem-bdd/specs/fluxo-negativo.spec.js',
+      'cypress/sem-bdd/specs/performance.spec.js',
+    ],
     supportFile: 'cypress/support/e2e.js',
     fixturesFolder: 'cypress/fixtures',
     viewportWidth: 1280,
