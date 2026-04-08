@@ -4,7 +4,7 @@ describe('Fluxo Negativo - Site do Inatel', () => {
     cy.visit('/home/')
   })
 
-  it('TC-NEG-001 - Tentar acessar uma página inexistente (404)', () => {
+  it('TC-016 - Tentar acessar uma página inexistente (404)', () => {
     cy.visit('/home/pagina-inexistente', { failOnStatusCode: false })
     
     // Validar que a página retorna status 404 ou que o conteúdo esperado não carrega
@@ -14,7 +14,7 @@ describe('Fluxo Negativo - Site do Inatel', () => {
       })
   })
 
-  it('TC-NEG-002 - Validar que elemento crítico não desaparece de maneira inesperada', () => {
+  it('TC-017 - Validar que elemento crítico não desaparece de maneira inesperada', () => {
     // Capturar quantidade inicial de elementos principais
     cy.get('a[href*="/home"]').then((elements) => {
       const initialCount = elements.length
@@ -32,7 +32,7 @@ describe('Fluxo Negativo - Site do Inatel', () => {
     })
   })
 
-  it('TC-NEG-003 - Validar que página responde a cliques em elementos', () => {
+  it('TC-018 - Validar que página responde a cliques em elementos', () => {
     // Testar que a página responde a interações mesmo sem dados
     cy.get('a').first().then(($link) => {
       if ($link.length > 0) {
@@ -45,7 +45,7 @@ describe('Fluxo Negativo - Site do Inatel', () => {
     cy.get('body').should('be.visible')
   })
 
-  it('TC-NEG-004 - Validar que página com requisição inválida não quebra', () => {
+  it('TC-019 - Validar que página com requisição inválida não quebra', () => {
     // Testar requisição com método HTTP inválido (simulado)
     cy.request({ 
       url: '/home/', 
@@ -61,7 +61,7 @@ describe('Fluxo Negativo - Site do Inatel', () => {
     cy.url().should('include', '/home')
   })
 
-  it('TC-NEG-005 - Validar comportamento ao tentar acessar URL com caracteres especiais', () => {
+  it('TC-020 - Validar comportamento ao tentar acessar URL com caracteres especiais', () => {
     // Testar requisição direta com caracteres especiais
     cy.request({ 
       url: '/home/página@#$%', 
