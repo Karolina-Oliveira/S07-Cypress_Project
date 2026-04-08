@@ -43,6 +43,18 @@ class NoticiasPage {
       .should('have.length.greaterThan', 0)
   }
 
+  validarLinksNoticiasVisiveis() {
+    cy.get(this.seletores.linkImagem)
+      .filter(':visible')
+      .should('have.length.greaterThan', 0)
+  }
+
+  validarConteudoNoticiasCarregado() {
+    cy.get(this.seletores.itemNoticia)
+      .filter(':visible')
+      .should('have.length.greaterThan', 0)
+  }
+
   /**
    * TC-001 — Hover em viewport mobile.
    * Em dispositivos touch (viewport < 768px) o efeito CSS :hover não se aplica.
@@ -161,6 +173,18 @@ class NoticiasPage {
       expect($body[0].scrollWidth).to.be.greaterThan(0)
       expect($body[0].scrollHeight).to.be.greaterThan(0)
     })
+  }
+
+  validarLinksNoticiasVisiveis() {
+    cy.get(this.seletores.linkImagem)
+      .filter(':visible')
+      .should('have.length.greaterThan', 0)
+  }
+
+  validarConteudoNoticiasCarregado() {
+    cy.get(this.seletores.itemNoticia)
+      .filter(':visible')
+      .should('have.length.greaterThan', 0)
   }
 }
 

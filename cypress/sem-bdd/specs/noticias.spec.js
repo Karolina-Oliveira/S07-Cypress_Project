@@ -13,7 +13,7 @@ describe('Noticias - Dados Invalidos e Inoportunos - Site do Inatel', () => {
     noticiasPage.fecharCookiesSeAparecer()
   })
 
-  it('TC-001 - hover em viewport mobile nao deve quebrar o layout (contexto invalido para hover CSS)', () => {
+  it('TC-014 - hover em viewport mobile nao deve quebrar o layout (contexto invalido para hover CSS)', () => {
     // Redimensiona para mobile: efeito CSS :hover não se aplica em touch
     cy.viewport(375, 667)
     noticiasPage.validarPaginaCarregada()
@@ -21,28 +21,38 @@ describe('Noticias - Dados Invalidos e Inoportunos - Site do Inatel', () => {
     noticiasPage.validarSemQuebraVisual()
   })
 
-  it('TC-002 - hover em imagem com src invalido nao deve gerar erro nem quebrar o layout', () => {
+  it('TC-015 - hover em imagem com src invalido nao deve gerar erro nem quebrar o layout', () => {
     noticiasPage.validarPaginaCarregada()
     noticiasPage.simularHoverEmImagemComSrcInvalido()
     noticiasPage.validarSemQuebraVisual()
   })
 
-  it('TC-003 - hover disparado antes do carregamento completo nao deve causar falha irrecuperavel', () => {
+  it('TC-016 - hover disparado antes do carregamento completo nao deve causar falha irrecuperavel', () => {
     // Reacessa a página e tenta hover imediatamente (momento inadequado)
     cy.visit('/noticias/')
     noticiasPage.tentarHoverPrematuro()
     noticiasPage.validarSemQuebraVisual()
   })
 
-  it('TC-004 - hover em container sem imagem filha nao deve gerar excecao (dado ausente)', () => {
+  it('TC-017 - hover em container sem imagem filha nao deve gerar excecao (dado ausente)', () => {
     noticiasPage.validarPaginaCarregada()
     noticiasPage.validarHoverEmCoverSemImagem()
     noticiasPage.validarSemQuebraVisual()
   })
 
-  it('TC-005 - hover repetido em alta frequencia nao deve travar ou quebrar o layout (stress)', () => {
+  it('TC-018 - hover repetido em alta frequencia nao deve travar ou quebrar o layout (stress)', () => {
     noticiasPage.validarPaginaCarregada()
     noticiasPage.simularHoverStress(20)
     noticiasPage.validarSemQuebraVisual()
+  })
+
+  it('TC-019 - validar links de noticias visiveis na pagina', () => {
+    noticiasPage.validarPaginaCarregada()
+    noticiasPage.validarLinksNoticiasVisiveis()
+  })
+
+  it('TC-020 - validar conteudo de noticias carregado corretamente', () => {
+    noticiasPage.validarPaginaCarregada()
+    noticiasPage.validarConteudoNoticiasCarregado()
   })
 })
