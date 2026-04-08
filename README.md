@@ -1,3 +1,6 @@
+> [!WARNING]
+> Este projeto utilizou ferramentas de inteligência artificial (IA) como apoio no desenvolvimento — geração de código, revisão de sintaxe e estruturação de testes. Todo o conteúdo gerado foi revisado, compreendido e validado pelos integrantes do grupo.
+
 # Inatel Cypress Project
 
 Projeto de automacao de testes end-to-end do site do Inatel utilizando Cypress, com cenarios em dois formatos:
