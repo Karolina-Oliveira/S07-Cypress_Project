@@ -3,7 +3,7 @@ describe('Performance - Site do Inatel', () => {
     cy.viewport(1440, 900)
   })
 
-  it('TC-PERF-001 - Validar tempo de carregamento da página', () => {
+  it('TC-021 - Validar tempo de carregamento da página', () => {
     cy.visit('/home/')
     cy.contains('Inatel', { timeout: 5000 }).should('be.visible')
     
@@ -14,7 +14,7 @@ describe('Performance - Site do Inatel', () => {
 
 
 
-  it('TC-PERF-002 - Validar dados em cache não causam lentidão', () => {
+  it('TC-022 - Validar dados em cache não causam lentidão', () => {
     cy.visit('/home/')
     
     // Recarregar página (segunda requisição deve funcionar normalmente)
@@ -25,7 +25,7 @@ describe('Performance - Site do Inatel', () => {
     cy.get('body').should('be.visible')
   })
 
-  it('TC-PERF-003 - Validar limite de requisições e rate limiting', () => {
+  it('TC-023 - Validar limite de requisições e rate limiting', () => {
     // Fazer múltiplas requisições rápidas para testar rate limiting
     let statusCode1, statusCode2, statusCode3
     

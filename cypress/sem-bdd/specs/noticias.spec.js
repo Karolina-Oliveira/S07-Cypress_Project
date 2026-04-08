@@ -45,4 +45,14 @@ describe('Noticias - Dados Invalidos e Inoportunos - Site do Inatel', () => {
     noticiasPage.simularHoverStress(20)
     noticiasPage.validarSemQuebraVisual()
   })
+
+  it('TC-021 - validar links de noticias visiveis na pagina', () => {
+    noticiasPage.validarPaginaCarregada()
+    noticiasPage.validarLinksNoticiasVisiveis()
+  })
+
+  it('TC-022 - validar conteudo de noticias carregado corretamente', () => {
+    noticiasPage.validarPaginaCarregada()
+    noticiasPage.validarConteudoNoticiasCarregado()
+  })
 })
