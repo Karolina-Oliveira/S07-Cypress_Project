@@ -17,6 +17,7 @@ module.exports = defineConfig({
   allowCypressEnv: permitirCypressEnv,
 
   e2e: {
+    reporter: 'cypress-mochawesome-reporter',
     baseUrl: 'https://inatel.br',
     specPattern: [
       'cypress/sem-bdd/specs/navegacao.spec.js',
