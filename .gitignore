@@ -8,3 +8,5 @@ cypress/reports/.jsons/
 .DS_Store
 Thumbs.db
 cypress/reports/index.html
+cypress/reports/
+.claude/
